@@ -19,8 +19,8 @@ class Logger {
         Logger();
         ~Logger();
 
-        static int  getLevel()
-        static void setLevel(int);
+        static int getLevel()
+        static int setLevel(int);                                               // will return 0 if the level is valid and 1 if the level is invalid
 
         static void setFilePath(string);
 
@@ -34,9 +34,14 @@ class Logger {
     protected:
         static string formatLine(string);
 
+        static void logToFile(string);
+        static void logToConsole(string);
+
     private:
         static int level;
+        static string filepath;
 
+        const int LEVEL_NONE = 4;
         const int LEVEL_INFO = 3;
         const int LEVEL_WARN = 2;
         const int LEVEL_ERROR = 1;
@@ -44,51 +49,3 @@ class Logger {
 }
 
 #endif
-
-/*
-
-class Logger {
-  private const LEVEL_INFO = 3;
-  private const LEVE  0;
-
-  private static level;
-
-
-  // Constructor
-  Logger() {
-    level = LEVEL_FATAL;
-  };
-
-  static setLevel(int level) {
-    Logger:level = level;
-  };
-
-  static getLevel(int level);
-
-
-  // set the file where the logger saves the logs
-  static void setFilePath(String filepath);
-
-  private static String formatLine(String text);
-
-  static void log(int level, String text) {
-    // abort if not enough level to log
-    if level > Logger.level return;
-
-
-
-  }
-
-  static void info(String text);
-  static void warn(String text);
-  static void error(String text);
-  static void fatal(String text);
-
-}
-
-
-
-Logger.log()
-
-Logger::log()
-*/

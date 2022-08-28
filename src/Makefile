@@ -6,3 +6,7 @@ logger: logger.cpp
 
 clean:
 	rm logger *o
+
+check:
+	logger
+	clean
