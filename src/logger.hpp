@@ -22,6 +22,8 @@ class Logger {
         static int  getLevel()
         static void setLevel(int);
 
+        static void setFilePath(string);
+
         static void log(int, string);
 
         static void info(String text);
@@ -30,6 +32,7 @@ class Logger {
         static void fatal(String text);
 
     protected:
+        static string formatLine(string);
 
     private:
         static int level;
@@ -42,13 +45,11 @@ class Logger {
 
 #endif
 
-// /*
+/*
 
 class Logger {
   private const LEVEL_INFO = 3;
-  private const LEVEL_WARN = 2;
-  private const LEVEL_ERROR = 1;
-  private const LEVEL_FATAL = 0;
+  private const LEVE  0;
 
   private static level;
 
