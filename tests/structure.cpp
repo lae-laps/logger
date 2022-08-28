@@ -1,3 +1,5 @@
+// this is just a meta-structure
+
 class Logger {
   private const LEVEL_INFO = 3;
   private const LEVEL_WARN = 2;

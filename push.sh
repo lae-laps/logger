@@ -8,5 +8,5 @@ git commit -m "$1"
 
 git status
 
-git push origin master
+git push 
 
