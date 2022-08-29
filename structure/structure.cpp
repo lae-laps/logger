@@ -1,4 +1,5 @@
-// this is just a meta-structure
+// this is just a meta-structure done in java-like syntax
+// this is to ignore
 
 class Logger {
   private const LEVEL_INFO = 3;

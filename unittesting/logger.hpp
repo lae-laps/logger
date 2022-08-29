@@ -16,6 +16,10 @@ using namespace std;
 
 class Logger {
     public:
+        static int levell;
+        static int mode;  
+        static string filepath;
+
         Logger();
         ~Logger();
 
@@ -31,6 +35,14 @@ class Logger {
         static void error(string);
         static void fatal(string);
 
+
+        static const int LEVEL_NONE = 4;
+        static const int LEVEL_INFO = 3;
+        static const int LEVEL_WARN = 2;
+        static const int LEVEL_ERROR = 1;
+        static const int LEVEL_FATAL = 0;
+
+
     protected:
         static string formatLine(string, int);
 
@@ -44,7 +56,7 @@ class Logger {
         // When set to 0, the path will be interpreted as a file, and created if not existing. This will be a fixed path which will never change
         // When set to 1, the path will be interpreted as a directory and files will be created daily. This option is very slightly slower as the
         // day will have to be checked, but will be usefull for long-term running applications such as servers
-        static int mode;                                               // TODO: make this unsigned without breaking
+        //static int mode;                                               // TODO: make this unsigned without breaking
 
         // The level of logging to use. By implementing this, you can set all the loggs you want in your program and only execute those of more
         // or the same importance as the number you specify for this attribute.
@@ -53,17 +65,17 @@ class Logger {
         // 2 : WARN
         // 3 : INFO
         // 4 : NONE
-        static int level;                                              // TODO: make this unsigned without breaking
+        //static int level;                                              // TODO: make this unsigned without breaking
 
         // The filepath attribute is interpreted depending on the status of the mode attribute. It can either represent an unique file or a
         // directory to automatically dump daily logs.
-        static string filepath;
+        //static string filepath;
 
-        static const int LEVEL_NONE = 4;
-        static const int LEVEL_INFO = 3;
-        static const int LEVEL_WARN = 2;
-        static const int LEVEL_ERROR = 1;
-        static const int LEVEL_FATAL = 0;
+        //static const int LEVEL_NONE = 4;
+        //static const int LEVEL_INFO = 3;
+        //static const int LEVEL_WARN = 2;
+        //static const int LEVEL_ERROR = 1;
+        //static const int LEVEL_FATAL = 0;
 };
 
 #endif
